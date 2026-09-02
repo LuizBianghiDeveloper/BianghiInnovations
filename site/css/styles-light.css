@@ -1,0 +1,209 @@
+/* ==========================================================================
+   BIANGHI INNOVATIONS — styles-light.css (tema claro da v2)
+   Camada de tema: carregada DEPOIS de styles.css pelo index.html único.
+   Tudo aqui é escopado em [data-theme="light"] — sem o atributo no <html>
+   (tema escuro, o padrão) este arquivo não muda nada. O atributo é aplicado
+   pelo alternador do header (js/main.js) e, na carga, pelo script inline do
+   <head> que lê a escolha salva. Redefine os design tokens e os valores de
+   cor fixos da v2 dark; layout, tipografia, espaçamentos e breakpoints
+   continuam vindo de styles.css.
+
+   Direção de arte: branco #FFFFFF e cinza #F2F2F2 alternando profundidade,
+   texto em quase-preto #0D0D0D, vermelho #E30613 cirúrgico — aqui o vermelho
+   marca por contraste, não por brilho (sem glow neon; sombras suaves).
+   ========================================================================== */
+
+:root[data-theme="light"] {
+  --fundo-0: #FFFFFF;
+  --fundo-1: #F2F2F2;
+  --fundo-2: #FFFFFF; /* cards brancos sobre seções cinza */
+  /* Em styles.css, --branco faz papel de "texto forte"; no tema claro vira
+     tinta escura. Onde branco de verdade é necessário (texto/ícone sobre
+     vermelho), há re-override pontual mais abaixo. */
+  --branco: #0D0D0D;
+  --texto: #33333A;
+  --texto-suave: #5A5A62;
+  /* Vermelho para texto pequeno sobre fundo claro (AA ≥ 4.5:1) —
+     o #E30613 puro rende 4,4:1 no branco: só passa em texto grande. */
+  --vermelho-claro: #B8050F;
+  --borda: rgba(13, 13, 13, 0.1);
+  --borda-vermelha: rgba(227, 6, 19, 0.5);
+  /* Tokens de "glow" viram sombras suaves com leve tinta vermelha */
+  --glow: 0 8px 20px rgba(227, 6, 19, 0.25);
+  --glow-forte: 0 10px 26px rgba(227, 6, 19, 0.32);
+}
+
+/* Seleção de texto: fundo vermelho pede texto branco de verdade */
+[data-theme="light"] ::selection {
+  color: #FFFFFF;
+}
+
+/* ---------- Header claro translúcido ---------- */
+
+[data-theme="light"] .header {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .header--scrolled {
+  box-shadow: 0 8px 28px rgba(13, 13, 13, 0.08);
+}
+
+/* CTA da navegação (WhatsApp): fundo vermelho pede texto branco de verdade
+   (--branco vira tinta escura neste tema) */
+[data-theme="light"] .nav__link--cta {
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .nav__link--cta:hover {
+  color: #FFFFFF;
+}
+
+/* ---------- Botões ---------- */
+
+[data-theme="light"] .btn--primario {
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(227, 6, 19, 0.25);
+}
+
+[data-theme="light"] .btn--fantasma {
+  border-color: rgba(13, 13, 13, 0.3);
+}
+
+[data-theme="light"] .btn--fantasma:hover {
+  box-shadow: 0 6px 16px rgba(227, 6, 19, 0.12);
+}
+
+/* ---------- Hero: grade cinza, brilho e partículas discretos ---------- */
+
+[data-theme="light"] .hero__grade {
+  background-image:
+    linear-gradient(rgba(13, 13, 13, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 13, 13, 0.045) 1px, transparent 1px);
+}
+
+[data-theme="light"] .hero__brilho {
+  background: radial-gradient(closest-side, rgba(227, 6, 19, 0.05), transparent 70%);
+}
+
+/* Parâmetros lidos pelo main.js (fallbacks no JS = valores do tema escuro) */
+[data-theme="light"] .hero__particulas {
+  --particulas-cor-neutra: 13, 13, 13;
+  --particulas-alfa-ponto: 0.3;
+  --particulas-alfa-linha: 0.1;
+}
+
+[data-theme="light"] .hero__chip {
+  background-color: rgba(13, 13, 13, 0.03);
+}
+
+[data-theme="light"] .hero__chip-ponto {
+  box-shadow: 0 0 8px rgba(227, 6, 19, 0.35);
+}
+
+[data-theme="light"] .hero__titulo .destaque {
+  text-shadow: none;
+}
+
+[data-theme="light"] .hero__rolagem-trilho {
+  border-color: rgba(13, 13, 13, 0.3);
+}
+
+[data-theme="light"] .hero__rolagem-ponto {
+  box-shadow: none;
+}
+
+/* ---------- Faixa de números ---------- */
+
+[data-theme="light"] .numero__sufixo {
+  text-shadow: none;
+}
+
+/* ---------- Sobre ---------- */
+
+[data-theme="light"] .sobre__marca::before {
+  background: radial-gradient(closest-side, rgba(227, 6, 19, 0.07), transparent 72%);
+}
+
+[data-theme="light"] .sobre__marca img {
+  filter: drop-shadow(0 12px 26px rgba(227, 6, 19, 0.16));
+}
+
+/* ---------- Serviços: cards brancos, borda acende no hover ---------- */
+
+[data-theme="light"] .card {
+  box-shadow: 0 2px 10px rgba(13, 13, 13, 0.04);
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: 0 14px 30px rgba(13, 13, 13, 0.1), 0 4px 12px rgba(227, 6, 19, 0.08);
+}
+
+[data-theme="light"] .card__icone {
+  background-color: rgba(227, 6, 19, 0.07);
+  border-color: rgba(227, 6, 19, 0.28);
+}
+
+[data-theme="light"] .card:hover .card__icone {
+  background-color: rgba(227, 6, 19, 0.11);
+  box-shadow: 0 4px 12px rgba(227, 6, 19, 0.18);
+}
+
+/* ---------- Como trabalhamos ---------- */
+
+[data-theme="light"] .etapa__numero {
+  text-shadow: none;
+}
+
+[data-theme="light"] .etapa__linha {
+  background: linear-gradient(90deg, rgba(227, 6, 19, 0.5), rgba(13, 13, 13, 0.08));
+}
+
+/* ---------- Diferenciais ---------- */
+
+[data-theme="light"] .diferencial:hover .diferencial__numero {
+  text-shadow: none;
+}
+
+/* ---------- Tecnologias (domínios) ---------- */
+
+[data-theme="light"] .dominio {
+  box-shadow: 0 2px 8px rgba(13, 13, 13, 0.04);
+}
+
+[data-theme="light"] .dominio:hover {
+  box-shadow: 0 12px 26px rgba(13, 13, 13, 0.1);
+}
+
+[data-theme="light"] .dominio__icone {
+  background-color: rgba(227, 6, 19, 0.07);
+  border-color: rgba(227, 6, 19, 0.28);
+}
+
+[data-theme="light"] .dominio:hover .dominio__icone {
+  box-shadow: 0 4px 10px rgba(227, 6, 19, 0.18);
+}
+
+/* ---------- Contato ---------- */
+
+[data-theme="light"] .secao--contato::before {
+  background: radial-gradient(closest-side, rgba(227, 6, 19, 0.05), transparent 70%);
+}
+
+[data-theme="light"] .contato__card {
+  box-shadow: 0 2px 8px rgba(13, 13, 13, 0.04);
+}
+
+[data-theme="light"] a.contato__card:hover {
+  box-shadow: 0 12px 26px rgba(13, 13, 13, 0.1), 0 4px 12px rgba(227, 6, 19, 0.08);
+}
+
+[data-theme="light"] .contato__icone {
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(227, 6, 19, 0.3);
+}
+
+/* ---------- Footer: um degrau abaixo do branco ---------- */
+
+[data-theme="light"] .footer {
+  background-color: #ECECEC;
+}

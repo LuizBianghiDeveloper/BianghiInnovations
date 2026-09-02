@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bianghi Innovations — Software sob medida, do código à operação</title>
+  <meta name="description" content="A Bianghi Innovations desenvolve, licencia e mantém sistemas que resolvem problemas reais do seu negócio — com atendimento direto de quem escreve o código.">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bianghi Innovations">
+  <meta property="og:title" content="Bianghi Innovations — Software sob medida, do código à operação">
+  <meta property="og:description" content="Desenvolvemos, licenciamos e mantemos sistemas que resolvem problemas reais do seu negócio — com atendimento direto de quem escreve o código.">
+  <meta property="og:image" content="assets/img/bianghi_logo_horizontal_master_1024px.png">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Favicon e ícones: .ico (16/32/48) para navegadores antigos e Safari,
+       SVG nítido em qualquer tamanho para os modernos, PNG 180 para o iOS e
+       manifesto com 192/512 (+ maskable) para Android e instalação como app. -->
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Tema salvo aplicado ANTES das folhas de estilo e do primeiro paint
+       (evita flash do tema errado). Sem JS ou sem escolha salva: tema escuro,
+       que é o padrão da marca. A chave e os valores espelham js/main.js. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("bianghi-tema") === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) { meta.setAttribute("content", "#FFFFFF"); }
+        }
+      } catch (erro) { /* armazenamento indisponível: fica no escuro */ }
+    })();
+  </script>
+
+  <!-- Tipografia: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Camada do tema claro: toda escopada em [data-theme="light"] — inerte no escuro -->
+  <link rel="stylesheet" href="css/styles-light.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="topo">
+    <div class="container header__inner">
+      <a href="#inicio" class="header__brand" aria-label="Bianghi Innovations — voltar ao início">
+        <!-- Um logo por tema (o CSS mostra só o do tema ativo) -->
+        <img src="assets/img/bianghi_logo_horizontal_white.svg" alt="Bianghi Innovations" class="header__logo logo--escuro" width="240" height="69">
+        <img src="assets/img/bianghi_logo_horizontal_master.svg" alt="Bianghi Innovations" class="header__logo logo--claro" width="240" height="69">
+      </a>
+
+      <!-- Alternador de tema: fora do <nav> para ficar visível no mobile sem abrir o menu.
+           aria-pressed="true" = tema claro ativo. Ícone = tema de destino (sol no escuro, lua no claro). -->
+      <button class="header__tema" id="tema-toggle" type="button" aria-label="Alternar tema claro/escuro" aria-pressed="false">
+        <svg class="header__tema-icone header__tema-icone--sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="header__tema-icone header__tema-icone--lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+
+      <button class="header__toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#servicos">Serviços</a></li>
+          <li><a class="nav__link" href="#processo">Processo</a></li>
+          <li><a class="nav__link" href="#tecnologias">Tecnologias</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+          <li><a class="nav__link nav__link--cta" href="https://wa.me/5531994980237" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__fundo" aria-hidden="true">
+        <div class="hero__grade"></div>
+        <canvas class="hero__particulas" id="hero-particulas"></canvas>
+        <div class="hero__brilho"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="hero__chip reveal"><span class="hero__chip-ponto" aria-hidden="true"></span>Desenvolvimento e licenciamento de software</p>
+        <h1 class="hero__titulo reveal">Software <span class="destaque">sob medida</span>, do código à operação</h1>
+        <p class="hero__subtitulo reveal">A Bianghi Innovations desenvolve, licencia e mantém sistemas que resolvem problemas reais do seu negócio — com atendimento direto de quem escreve o código.</p>
+        <div class="hero__acoes reveal">
+          <a class="btn btn--primario" href="https://wa.me/5531994980237" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a class="btn btn--fantasma" href="#servicos">Conheça nossos serviços</a>
+        </div>
+      </div>
+
+      <a class="hero__rolagem" href="#numeros" aria-label="Rolar para a próxima seção">
+        <span class="hero__rolagem-trilho" aria-hidden="true"><span class="hero__rolagem-ponto"></span></span>
+      </a>
+    </section>
+
+    <!-- ============ NÚMEROS ============ -->
+    <!-- Regra do conteúdo: apenas afirmações honestas — sem métricas inventadas.
+         Valores reais (anos, clientes, projetos) entram aqui quando existirem. -->
+    <section class="numeros" id="numeros" aria-label="A Bianghi em números">
+      <div class="container">
+        <ul class="numeros__grid" role="list">
+          <li class="numero reveal">
+            <span class="numero__valor"><span class="numero__contador" data-contagem="100">100</span><span class="numero__sufixo">%</span></span>
+            <span class="numero__rotulo">Atendimento direto com quem escreve o código</span>
+          </li>
+          <li class="numero reveal">
+            <span class="numero__valor"><span class="numero__contador" data-contagem="0">0</span></span>
+            <span class="numero__rotulo">Intermediários entre você e o desenvolvedor</span>
+          </li>
+          <li class="numero reveal">
+            <span class="numero__valor"><span class="numero__contador" data-contagem="6">6</span></span>
+            <span class="numero__rotulo">Frentes de atuação, do produto à infraestrutura</span>
+          </li>
+          <li class="numero reveal">
+            <span class="numero__valor"><span class="numero__contador" data-contagem="4">4</span></span>
+            <span class="numero__rotulo">Etapas de trabalho, de entender a sustentar</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="secao" id="sobre">
+      <div class="container">
+        <header class="secao__cabecalho reveal">
+          <p class="secao__tag">Sobre</p>
+          <h2 class="secao__titulo">Quem somos</h2>
+        </header>
+        <div class="sobre__grid">
+          <div class="sobre__texto reveal">
+            <p>A <strong>Bianghi Innovations</strong> é uma empresa mineira de desenvolvimento e licenciamento de software, fundada por Luiz Fernando Bianghi Soares. Criamos produtos próprios e projetos sob encomenda para empresas que precisam de sistemas confiáveis — sem camadas de burocracia entre quem pede e quem entrega.</p>
+            <p>Trabalhamos de ponta a ponta: entendemos o problema, desenhamos a solução, desenvolvemos, colocamos no ar e continuamos por perto na manutenção e no suporte. Cada projeto é tratado como algo que vamos sustentar por anos, não apenas entregar e esquecer.</p>
+          </div>
+          <div class="sobre__marca reveal" aria-hidden="true">
+            <img src="assets/img/bianghi_symbol_red.svg" alt="" width="280" height="243" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section class="secao secao--elevada" id="servicos">
+      <div class="container">
+        <header class="secao__cabecalho reveal">
+          <p class="secao__tag">Serviços</p>
+          <h2 class="secao__titulo">O que fazemos</h2>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3 class="card__titulo">Produtos de software e licenciamento</h3>
+            <p class="card__texto">Softwares próprios, prontos para uso e licenciados diretamente pela Bianghi Innovations. Você adota uma ferramenta madura, com evolução contínua e canal direto com quem a desenvolve.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="card__titulo">Desenvolvimento sob encomenda</h3>
+            <p class="card__texto">Sistemas construídos do zero para o seu processo, quando a solução de prateleira não resolve. Escopo claro, entregas acompanhadas e código pensado para durar.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+            </div>
+            <h3 class="card__titulo">Software customizável</h3>
+            <p class="card__texto">Produtos que se adaptam à sua operação, e não o contrário. Ajustamos regras, integrações e fluxos para que o sistema trabalhe do jeito que a sua empresa já funciona.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+            </div>
+            <h3 class="card__titulo">Consultoria em TI</h3>
+            <p class="card__texto">Apoio técnico para decidir com segurança: escolha de tecnologias, arquitetura de sistemas, integração entre ferramentas e planejamento de projetos de software.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="card__titulo">Suporte técnico e manutenção</h3>
+            <p class="card__texto">Acompanhamento contínuo dos sistemas em produção: correções, atualizações e melhorias com prazo de resposta definido. Seu software não fica órfão depois da entrega.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="card__titulo">Hospedagem e tratamento de dados</h3>
+            <p class="card__texto">Infraestrutura para manter suas aplicações no ar e seus dados organizados, seguros e disponíveis — monitoramento, rotinas de backup e gestão do ambiente inclusos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO TRABALHAMOS ============ -->
+    <section class="secao" id="processo">
+      <div class="container">
+        <header class="secao__cabecalho reveal">
+          <p class="secao__tag">Processo</p>
+          <h2 class="secao__titulo">Como trabalhamos</h2>
+          <p class="secao__descricao">Um processo direto, com a mesma pessoa do início ao fim.</p>
+        </header>
+
+        <ol class="etapas">
+          <li class="etapa reveal">
+            <div class="etapa__topo" aria-hidden="true"><span class="etapa__numero">01</span><span class="etapa__linha"></span></div>
+            <h3 class="etapa__titulo">Entender</h3>
+            <p class="etapa__texto">Conversamos sobre o problema real: o processo, as dores e o que precisa mudar. Sem questionário genérico — é o desenvolvedor ouvindo direto.</p>
+          </li>
+          <li class="etapa reveal">
+            <div class="etapa__topo" aria-hidden="true"><span class="etapa__numero">02</span><span class="etapa__linha"></span></div>
+            <h3 class="etapa__titulo">Desenhar</h3>
+            <p class="etapa__texto">Definimos escopo, prazo e arquitetura da solução. Você aprova sabendo exatamente o que será construído — e quanto custa.</p>
+          </li>
+          <li class="etapa reveal">
+            <div class="etapa__topo" aria-hidden="true"><span class="etapa__numero">03</span><span class="etapa__linha"></span></div>
+            <h3 class="etapa__titulo">Desenvolver</h3>
+            <p class="etapa__texto">Código escrito para durar, com entregas acompanhadas de perto. Você vê o sistema tomar forma em vez de esperar uma caixa-preta.</p>
+          </li>
+          <li class="etapa reveal">
+            <div class="etapa__topo" aria-hidden="true"><span class="etapa__numero">04</span><span class="etapa__linha"></span></div>
+            <h3 class="etapa__titulo">Sustentar</h3>
+            <p class="etapa__texto">Colocamos no ar e continuamos por perto: correções, melhorias e suporte com prazo de resposta definido.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ DIFERENCIAIS ============ -->
+    <section class="secao secao--elevada" id="diferenciais">
+      <div class="container">
+        <header class="secao__cabecalho reveal">
+          <p class="secao__tag">Diferenciais</p>
+          <h2 class="secao__titulo">Por que a Bianghi</h2>
+        </header>
+
+        <div class="diferenciais">
+          <div class="diferencial reveal">
+            <span class="diferencial__numero" aria-hidden="true">01</span>
+            <h3 class="diferencial__titulo">Atendimento direto com o desenvolvedor</h3>
+            <p class="diferencial__texto">Você fala com quem constrói o sistema, sem intermediários que traduzem (e perdem) informação pelo caminho.</p>
+          </div>
+          <div class="diferencial reveal">
+            <span class="diferencial__numero" aria-hidden="true">02</span>
+            <h3 class="diferencial__titulo">Compromisso de longo prazo</h3>
+            <p class="diferencial__texto">Entregamos, mantemos e evoluímos: o mesmo cuidado no primeiro deploy e na atualização três anos depois.</p>
+          </div>
+          <div class="diferencial reveal">
+            <span class="diferencial__numero" aria-hidden="true">03</span>
+            <h3 class="diferencial__titulo">Solução no tamanho do problema</h3>
+            <p class="diferencial__texto">Nada de projeto inflado: você paga pelo que precisa, com escopo e prazos definidos antes de começar.</p>
+          </div>
+          <div class="diferencial reveal">
+            <span class="diferencial__numero" aria-hidden="true">04</span>
+            <h3 class="diferencial__titulo">Tecnologia a serviço do resultado</h3>
+            <p class="diferencial__texto">Escolhemos a ferramenta que resolve seu caso com eficiência, não a mais badalada do momento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECNOLOGIAS ============ -->
+    <!-- Domínios de atuação — o dono ainda não definiu o stack real.
+         Quando definir, trocar/complementar os cards abaixo (cada card é independente). -->
+    <section class="secao" id="tecnologias">
+      <div class="container">
+        <header class="secao__cabecalho reveal">
+          <p class="secao__tag">Tecnologias</p>
+          <h2 class="secao__titulo">Onde atuamos</h2>
+          <p class="secao__descricao">Mais importante do que a ferramenta é saber onde aplicá-la. Atuamos em seis domínios — e escolhemos a tecnologia certa para cada caso.</p>
+        </header>
+
+        <div class="dominios">
+          <article class="dominio reveal">
+            <div class="dominio__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="dominio__conteudo">
+            <h3 class="dominio__titulo">Aplicações Web</h3>
+            <p class="dominio__texto">Sistemas e painéis acessíveis do navegador, em qualquer dispositivo.</p>
+            </div>
+          </article>
+
+          <article class="dominio reveal">
+            <div class="dominio__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div class="dominio__conteudo">
+            <h3 class="dominio__titulo">APIs e Integrações</h3>
+            <p class="dominio__texto">Sistemas que conversam entre si: ERPs, gateways de pagamento e serviços externos.</p>
+            </div>
+          </article>
+
+          <article class="dominio reveal">
+            <div class="dominio__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="dominio__conteudo">
+            <h3 class="dominio__titulo">Bancos de Dados</h3>
+            <p class="dominio__texto">Modelagem, otimização e migração de dados com segurança.</p>
+            </div>
+          </article>
+
+          <article class="dominio reveal">
+            <div class="dominio__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+            </div>
+            <div class="dominio__conteudo">
+            <h3 class="dominio__titulo">Cloud e Infraestrutura</h3>
+            <p class="dominio__texto">Ambientes na nuvem com monitoramento, backup e espaço para crescer.</p>
+            </div>
+          </article>
+
+          <article class="dominio reveal">
+            <div class="dominio__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="dominio__conteudo">
+            <h3 class="dominio__titulo">Automação de Processos</h3>
+            <p class="dominio__texto">Rotinas manuais transformadas em fluxos automáticos e auditáveis.</p>
+            </div>
+          </article>
+
+          <article class="dominio reveal">
+            <div class="dominio__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+            </div>
+            <div class="dominio__conteudo">
+            <h3 class="dominio__titulo">Dados e Relatórios</h3>
+            <p class="dominio__texto">Informação organizada e visível para decidir com base em fatos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="secao secao--contato" id="contato">
+      <div class="container">
+        <header class="secao__cabecalho reveal">
+          <p class="secao__tag">Contato</p>
+          <h2 class="secao__titulo">Tem um projeto em mente ou um sistema que precisa de atenção?</h2>
+          <p class="secao__descricao">Chame no WhatsApp e receba uma avaliação direta, sem compromisso.</p>
+        </header>
+
+        <div class="contato__grid">
+          <a class="contato__card reveal" href="https://wa.me/5531994980237" target="_blank" rel="noopener">
+            <div class="contato__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.79a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.29-1.29a2 2 0 0 1 2.11-.45c.89.35 1.83.6 2.79.72A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span class="contato__rotulo">WhatsApp</span>
+            <span class="contato__valor">(31) 99498-0237</span>
+          </a>
+
+          <a class="contato__card reveal" href="mailto:luizbianghi@gmail.com">
+            <div class="contato__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <span class="contato__rotulo">E-mail</span>
+            <span class="contato__valor">luizbianghi@gmail.com</span>
+          </a>
+
+          <div class="contato__card contato__card--estatico reveal">
+            <div class="contato__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="contato__rotulo">Localização</span>
+            <span class="contato__valor">Minas Gerais, Brasil</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__linha" aria-hidden="true"></div>
+    <div class="container footer__inner">
+      <img src="assets/img/bianghi_logo_horizontal_white.svg" alt="Bianghi Innovations" class="footer__logo logo--escuro" width="220" height="63" loading="lazy">
+      <img src="assets/img/bianghi_logo_horizontal_master.svg" alt="Bianghi Innovations" class="footer__logo logo--claro" width="220" height="63" loading="lazy">
+      <p class="footer__razao">BIANGHI INNOVATIONS DESENVOLVIMENTO E LICENCIAMENTO DE SOFTWARES LTDA</p>
+      <p class="footer__cnpj">CNPJ: 58.767.885/0001-39 · Minas Gerais, Brasil</p>
+      <p class="footer__copy">© 2026 BIANGHI INNOVATIONS — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

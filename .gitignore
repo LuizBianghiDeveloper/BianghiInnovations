@@ -1,0 +1,7 @@
+# dcoder-terminal
+.ddesktop/
+.dcoder/
+
+# Ferramentas de desenvolvimento assistido (configuracao local)
+.claude/
+.agents/
