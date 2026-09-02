@@ -20,10 +20,11 @@ Uma landing page de página única, feita em **HTML, CSS e JavaScript puros**, s
 ![Zero dependências](https://img.shields.io/badge/depend%C3%AAncias-zero-0D0D0D?style=for-the-badge)
 ![Tema claro e escuro](https://img.shields.io/badge/tema-claro%20%2B%20escuro-E30613?style=for-the-badge)
 ![pt-BR](https://img.shields.io/badge/idioma-pt--BR-E30613?style=for-the-badge)
+[![GitHub Pages](https://img.shields.io/github/deployments/LuizBianghiDeveloper/BianghiInnovations/github-pages?style=for-the-badge&label=github%20pages)](https://luizbianghideveloper.github.io/BianghiInnovations/)
 
 <br>
 
-[**💬 WhatsApp**](https://wa.me/5531994980237) &nbsp;·&nbsp; [**✉️ E-mail**](mailto:luizbianghi@gmail.com) &nbsp;·&nbsp; [**🚀 Rodar localmente**](#-como-rodar-localmente) &nbsp;·&nbsp; [**🎨 Design system**](#-design-system)
+[**🌐 Ver o site**](https://luizbianghideveloper.github.io/BianghiInnovations/) &nbsp;·&nbsp; [**💬 WhatsApp**](https://wa.me/5531994980237) &nbsp;·&nbsp; [**✉️ E-mail**](mailto:luizbianghi@gmail.com) &nbsp;·&nbsp; [**🚀 Rodar localmente**](#-como-rodar-localmente) &nbsp;·&nbsp; [**🎨 Design system**](#-design-system)
 
 </div>
 
@@ -111,6 +112,7 @@ Depois acesse `http://127.0.0.1:8765` (ou a porta informada pelo comando).
 ```
 BianghiInnovations/
 ├── README.md
+├── .github/workflows/pages.yml    # deploy automático no GitHub Pages
 ├── docs/                          # capturas de tela usadas neste README
 └── site/                          # raiz pública do site (é isso que vai para o servidor)
     ├── index.html                 # página única, todas as seções
@@ -182,9 +184,11 @@ Os tokens ficam em `:root` no `styles.css` e são redefinidos em `:root[data-the
 
 ## ☁️ Deploy
 
-Por ser estático, o site roda em qualquer hospedagem de arquivos: GitHub Pages, Netlify, Vercel, Cloudflare Pages, Amazon S3 ou um servidor web comum (Nginx, Apache).
+O site é publicado automaticamente no **GitHub Pages** a cada push na branch `main`, pelo workflow em `.github/workflows/pages.yml`. Ele empacota a pasta `site/` e faz o deploy, sem etapa de build.
 
-A pasta a publicar é **`site/`**. Se a hospedagem exigir a raiz do repositório, aponte o diretório de publicação para `site` na configuração do serviço.
+🌐 **https://luizbianghideveloper.github.io/BianghiInnovations/**
+
+Por ser estático, o site também roda em qualquer outra hospedagem de arquivos: Netlify, Vercel, Cloudflare Pages, Amazon S3 ou um servidor web comum (Nginx, Apache). A pasta a publicar é sempre **`site/`**.
 
 <br>
 
